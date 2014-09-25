@@ -68,7 +68,7 @@ def sync_dir_to_s3(local_dir)
 				clean_line = line.match(/((?:upload|delete):+.*$)/)
 
 				# if clean_line is nil, no match was found.
-				next if clean_line == nil
+				next if clean_line.nil?
 
 				# echo the first match group to the log.
 				`/bin/echo '    #{clean_line[1]}' >> /path/to/log/s3sync.log`
